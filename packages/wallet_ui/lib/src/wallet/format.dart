@@ -15,7 +15,7 @@ double displayAmount(BigInt units, int decimals) =>
 
 /// A coin amount at capped precision, optionally suffixed with [symbol].
 String formatAmount(double value, int decimals, {String? symbol}) {
-  final text = value.toStringAsFixed(decimals.clamp(0, 8));
+  final text = value.toStringAsFixed(decimals.clamp(0, 12));
   return symbol == null ? text : '$text $symbol';
 }
 
