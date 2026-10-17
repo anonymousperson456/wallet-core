@@ -53,7 +53,7 @@ class TxActivityRow extends StatelessWidget {
     final amountFiat = coinRate != null ? amount * coinRate : null;
     final confirmed = asset.isTxConfirmed(tx);
     final date = DateTime.fromMillisecondsSinceEpoch(tx.timestamp * 1000);
-    final amountColor = incoming ? BrandColors.success : BrandColors.ink;
+    final amountColor = incoming ? BrandColors.success : BrandColors.error;
 
     // Leading status cue: a failed or unresolved send must not read as an
     // ordinary pending. Null = nothing to flag (confirmed, or a healthy mempool
@@ -174,7 +174,7 @@ class TxActivityIcon extends StatelessWidget {
         child: Icon(
           incoming ? Icons.arrow_downward_rounded : Icons.arrow_upward_rounded,
           size: 16,
-          color: incoming ? BrandColors.success : BrandColors.primary,
+          color: incoming ? BrandColors.success : BrandColors.error,
         ),
       );
     }
@@ -200,7 +200,7 @@ class TxActivityIcon extends StatelessWidget {
               child: Icon(
                 incoming ? Icons.south : Icons.north,
                 size: 10,
-                color: incoming ? BrandColors.success : BrandColors.primary,
+                color: incoming ? BrandColors.success : BrandColors.error,
               ),
             ),
           ),
