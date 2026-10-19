@@ -468,7 +468,7 @@ class SendAmountCard extends StatelessWidget {
                 prefix: fiatEntry ? quote.currency.symbol : '',
                 hint: fiatEntry
                     ? (fiatDecimals == 0 ? '0' : '0.${'0' * fiatDecimals}')
-                    : 'Enter Amount',
+                    : '0.000000000000',
                 decimals: fiatEntry ? fiatDecimals : amount.coinDecimals,
               ),
             ),
